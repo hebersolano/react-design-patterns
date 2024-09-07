@@ -1,21 +1,24 @@
 import "./App.css";
-import SplitScreen from "./components/SplitScreen";
-
-function LeftComponent() {
-  return <h2>I am Left</h2>;
-}
-function RightComponent() {
-  return <h2>I am Right</h2>;
-}
+import List from "./components/lists/List";
+import { authorT } from "./components/lists/data/types";
+import { authors } from "./components/lists/data/authors";
+import SmallList from "./components/lists/SmallAuthorList";
+import LargeList from "./components/lists/LargeAuthorList";
 
 function App() {
   return (
-    <SplitScreen
-      Left={LeftComponent}
-      leftTw="basis-1/3"
-      Right={RightComponent}
-      rightTw="basis-2/3"
-    />
+    <>
+      <List<authorT>
+        items={authors}
+        sourceName="author"
+        Component={SmallList}
+      />
+      <List<authorT>
+        items={authors}
+        sourceName="author"
+        Component={LargeList}
+      />
+    </>
   );
 }
 
