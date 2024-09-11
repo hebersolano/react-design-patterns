@@ -1,6 +1,6 @@
-import { authorT } from "./data/types";
+import { Author } from "./data/types";
 
-function SmallList({ author }: { [key: string]: authorT }) {
+function SmallList({ author }: { [key: string]: Author }) {
   const { name, age } = author;
 
   return (

@@ -1,6 +1,6 @@
-import { authorT } from "./data/types";
+import { Author } from "./data/types";
 
-function LargeList({ author }: { [key: string]: authorT }) {
+function LargeList({ author }: { [key: string]: Author }) {
   const { name, age, country, books } = author;
 
   return (
