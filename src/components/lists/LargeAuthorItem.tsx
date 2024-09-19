@@ -1,6 +1,6 @@
 import { Author } from "./data/types";
 
-function LargeList({ author }: { [key: string]: Author }) {
+function LargeAuthorItem({ author }: { author?: Author }) {
   const { name, age, country, books } = author;
 
   return (
@@ -18,4 +18,4 @@ function LargeList({ author }: { [key: string]: Author }) {
   );
 }
 
-export default LargeList;
+export default LargeAuthorItem;
