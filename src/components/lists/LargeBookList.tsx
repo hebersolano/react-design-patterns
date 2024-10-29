@@ -1,6 +1,6 @@
 import { Book } from "./data/types";
 
-function LargeBookList({ book }: { book: Book }) {
+function LargeBookList({ book }: { book?: Book }) {
   const { name, price, title, pages } = book;
 
   return (
