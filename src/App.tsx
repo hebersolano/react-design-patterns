@@ -1,11 +1,10 @@
 import "./App.css";
-import Controller from "./controlled-uncontrolled-componets/controller";
+import FlowController from "./controlled-uncontrolled-componets/flow-controller";
 
 function App() {
   return (
     <>
-      {/* <UncontrolledForm /> */}
-      <Controller />
+      <FlowController />
     </>
   );
 }
