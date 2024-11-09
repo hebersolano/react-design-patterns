@@ -1,6 +1,6 @@
 import { Children, useState } from "react";
 
-function UncontrolledFlow({
+function HSFlow({
   onDone,
   children,
 }: {
@@ -43,4 +43,4 @@ function UncontrolledFlow({
   );
 }
 
-export default UncontrolledFlow;
+export default HSFlow;

@@ -1,31 +1,38 @@
-import { Dispatch, SetStateAction, useState } from "react";
-import UncontrolledFlow from "./uncontrolled-flow";
+import UnctrlFlow from "./unctrl-flow";
 
-type SetData = Dispatch<SetStateAction<{ index: number; done: boolean }>>;
+type StepProps = { goNext?: (data: Record<string, string>) => void };
 
-const StepOne = ({ setData }: { setData: SetData }) => {
-  return (
-    <div>
-      <h1>Step #1: Name</h1>
-      <input type="text" className="border pl-2" placeholder="name" />
-    </div>
-  );
-};
-const StepTwo = () => <h1>Step #2</h1>;
-const StepThree = () => <h1>Step #3</h1>;
-
-const initData = { index: 0, done: false };
+const StepOne = ({ goNext }: StepProps) => (
+  <div>
+    <h1>Step #1: name</h1>
+    <button onClick={goNext?.bind(null, { name: "Heber" })}>next</button>
+  </div>
+);
+const StepTwo = ({ goNext }: StepProps) => (
+  <div>
+    <h1>Step #2: email</h1>
+    <button onClick={goNext?.bind(null, { email: "yourmail@mail.com" })}>
+      next
+    </button>
+  </div>
+);
+const StepThree = ({ goNext }: StepProps) => (
+  <div>
+    <h1>Step #3: address</h1>
+    <button onClick={goNext?.bind(null, { address: "some address" })}>
+      next
+    </button>
+  </div>
+);
 
 function FlowController() {
-  const [data, setData] = useState(initData);
-
   return (
     <>
-      <UncontrolledFlow onDone={() => ""}>
-        <StepOne setData={setData} />
+      <UnctrlFlow onDone={() => {}}>
+        <StepOne />
         <StepTwo />
         <StepThree />
-      </UncontrolledFlow>
+      </UnctrlFlow>
     </>
   );
 }
