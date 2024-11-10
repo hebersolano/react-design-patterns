@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import UnctrlFlow from "./unctrl-flow";
 
 type Data = Record<string, string>;
-export type GoNext = (data?: Data) => void;
+export type GoNext = (data: Data) => void;
 type StepProps = { goNext?: (data: Data) => void };
 
 const StepOne = ({ goNext }: StepProps) => (
@@ -28,34 +28,36 @@ const StepThree = ({ goNext }: StepProps) => (
   </div>
 );
 
+const LastStep = ({ data }: { data: Data }) => {
+  console.log("last step:", data);
+
+  return (
+    <div>
+      <h1>Finall Step</h1>
+    </div>
+  );
+};
+
 function CtrlFlowParent() {
   const [data, setData] = useState<Data>({});
   const [currStepIdx, setCurrStepIdx] = useState(0);
-  const childrenLength = useRef<number>();
+  // const childrenLength = useRef<number>();
 
-  const goNext: GoNext = (dataStep) => {
-    setData((data) => {
-      const newData = { ...data, ...dataStep };
+  const goNext: GoNext = (dataStep = {}) => {
+    setData((currData) => {
+      const newData = { ...currData, ...dataStep };
+      console.log("newData", currStepIdx, newData);
       return newData;
     });
-
-    setCurrStepIdx((i) => {
-      return i + 1;
-    });
-
-    console.log("go next", currStepIdx, childrenLength.current, data);
-    if (childrenLength.current && currStepIdx === childrenLength.current - 1) {
-      console.log("Final step:", data);
-      return;
-    }
+    setCurrStepIdx((idx) => idx + 1);
   };
 
   return (
     <>
       <UnctrlFlow
         currIdx={currStepIdx}
-        childrenLength={childrenLength}
-        goNext={goNext}
+        onNext={goNext}
+        finalStep={<LastStep data={data} />}
       >
         <StepOne />
         <StepTwo />

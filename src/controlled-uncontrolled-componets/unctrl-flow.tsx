@@ -2,8 +2,6 @@ import {
   Children,
   cloneElement,
   isValidElement,
-  MutableRefObject,
-  useEffect,
   type ReactElement,
 } from "react";
 import type { GoNext } from "./ctrl-flow-parent";
@@ -12,18 +10,19 @@ type Data = Record<string, string>;
 
 type Props = {
   currIdx: number;
-  childrenLength: MutableRefObject<number | undefined>;
-  goNext: GoNext;
+  onNext: GoNext;
+  finalStep: JSX.Element;
   children: JSX.Element[];
 };
 
-function UnctrlFlow({ currIdx, childrenLength, goNext, children }: Props) {
+function UnctrlFlow({ currIdx, onNext, finalStep, children }: Props) {
   const childdrenArr = Children.toArray(children);
+  childdrenArr.push(finalStep);
   const currChild = childdrenArr[currIdx];
 
-  useEffect(() => {
-    childrenLength.current = childdrenArr.length;
-  }, []);
+  function goNext(data: Data) {
+    onNext(data);
+  }
 
   if (!isValidElement(currChild)) return currChild;
 
