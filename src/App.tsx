@@ -1,12 +1,10 @@
 import "./App.css";
-import CtrlFlowParent from "./controlled-uncontrolled-componets/ctrl-flow-parent";
-import FlowController from "./controlled-uncontrolled-componets/flow-controller";
+import HocApp from "./high-order-components/hoc-app";
 
 function App() {
   return (
     <>
-      {/* <FlowController /> */}
-      <CtrlFlowParent />
+      <HocApp />
     </>
   );
 }

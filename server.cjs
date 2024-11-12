@@ -79,6 +79,8 @@ app.post("/users/:id", (req, res) => {
   const { id } = req.params;
   const { user: editedUser } = req.body;
 
+  console.log("post Heber", id, editedUser);
+
   users = users.map((user) => (user.id === id ? editedUser : user));
 
   res.json(users.find((user) => user.id === id));
