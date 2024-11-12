@@ -1,11 +1,13 @@
 import "./App.css";
-import HocApp from "./high-order-components/hoc-app";
+import UserInfo from "./custom-hooks/user-info";
 
 function App() {
   return (
-    <>
-      <HocApp />
-    </>
+    <div className="space-y-4 divide-y divide-solid divide-black">
+      <UserInfo userId="2" />
+      <UserInfo userId="1" />
+      <UserInfo userId="3" />
+    </div>
   );
 }
 

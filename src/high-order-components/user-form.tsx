@@ -1,5 +1,5 @@
 import { Author } from "../components/lists/data/types";
-import includeUpdatableUser from "./include-updatable-user";
+import includeUpdatableResource from "./include-updatable-resource";
 
 type User = Author;
 
@@ -33,6 +33,10 @@ function UserForm(props: UserFormProps) {
   );
 }
 
-const UserInfoForm = includeUpdatableUser<UserFormProps, User>(UserForm, "3");
+const UserInfoForm = includeUpdatableResource<UserFormProps, User>(
+  UserForm,
+  "http://localhost:9090/users/3",
+  "user",
+);
 
 export default UserInfoForm;
