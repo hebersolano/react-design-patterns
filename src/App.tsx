@@ -1,12 +1,10 @@
 import "./App.css";
-import UserInfo from "./custom-hooks/user-info";
+import AppOtherPatters from "./other-patters/app-other-patters";
 
 function App() {
   return (
     <div className="space-y-4 divide-y divide-solid divide-black">
-      <UserInfo userId="2" />
-      <UserInfo userId="1" />
-      <UserInfo userId="3" />
+      <AppOtherPatters />
     </div>
   );
 }
