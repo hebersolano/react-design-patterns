@@ -1,9 +1,13 @@
 import Card from "./card";
+import ObserverPattern from "./observer-patter";
 
 function AppOtherPatters() {
   return (
     <>
-      <Card test="Value">
+      <div>
+        <ObserverPattern />
+      </div>
+      {/* <Card test="Value">
         <Card.Header>
           <h1 style={{ margin: "0" }}>Header</h1>
         </Card.Header>
@@ -20,7 +24,7 @@ function AppOtherPatters() {
           <button>Ok</button>
           <button>Cancel</button>
         </Card.Footer>
-      </Card>
+      </Card> */}
     </>
   );
 }
