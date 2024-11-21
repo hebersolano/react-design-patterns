@@ -1,4 +1,3 @@
-import Card from "./card";
 import ObserverPattern from "./observer-patter";
 
 function AppOtherPatters() {

@@ -2,16 +2,20 @@ import emitter from "./emitter";
 
 function Buttons() {
   function onIncrementCounter() {
-    emitter.emit("inc");
+    emitter.emit("inc", { info: "+" });
   }
   function onDecrementCounter() {
-    emitter.emit("dec");
+    emitter.emit("dec", { info: "-" });
   }
 
   return (
     <div>
-      <button onClick={onIncrementCounter}>+</button>
-      <button onClick={onDecrementCounter}>-</button>
+      <button onClick={onDecrementCounter} className="px-2 py-1">
+        -
+      </button>
+      <button onClick={onIncrementCounter} className="px-2 py-1">
+        +
+      </button>
     </div>
   );
 }
