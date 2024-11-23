@@ -1,9 +1,9 @@
-import AppOtherIssue from "./other-issue/app-other-issue";
+import AppElementsAsProps from "./elements-as-props/app-elements-as";
 
 export default function App() {
   return (
     <>
-      <AppOtherIssue />
+      <AppElementsAsProps />
     </>
   );
 }
