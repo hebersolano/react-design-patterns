@@ -1,7 +1,8 @@
 import "./App.css";
+import AppContext from "./context-performace/App";
 
 function App() {
-  return <div className="space-y-4 divide-y divide-solid divide-black"></div>;
+  return <AppContext />;
 }
 
 export default App;
