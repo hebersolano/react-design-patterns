@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Button from "./button";
-import { useAppContext } from "./context";
+import { useAppState } from "../hooks/use-context";
+import { Button } from "./button";
 
 const SidebarDiv = styled.div<{ collapsed?: boolean }>`
   width: ${(props) => (props.collapsed ? "60px" : "200px")};
@@ -14,7 +14,8 @@ const SidebarDiv = styled.div<{ collapsed?: boolean }>`
 `;
 
 const Sidebar = () => {
-  const { isCollapsed } = useAppContext();
+  const { isCollapsed } = useAppState();
+
   return (
     <SidebarDiv collapsed={isCollapsed}>
       <Button />

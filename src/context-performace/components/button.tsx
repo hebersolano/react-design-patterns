@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useAppContext } from "./context";
 
 const ToggleButton = styled.button`
   margin-bottom: 20px;
@@ -11,7 +12,9 @@ const ToggleButton = styled.button`
 `;
 
 const Button = () => {
-  return <ToggleButton>⮜</ToggleButton>;
+  const { toggleCollapsed } = useAppContext();
+
+  return <ToggleButton onClick={toggleCollapsed}>⮜</ToggleButton>;
 };
 
 export default Button;

@@ -1,8 +1,13 @@
 import "./App.css";
-import AppContext from "./context-performace/App";
+import AppContextSplit from "./context-split/App";
 
 function App() {
-  return <AppContext />;
+  return (
+    <>
+      {/* <AppPerformanceContext /> */}
+      <AppContextSplit />
+    </>
+  );
 }
 
 export default App;

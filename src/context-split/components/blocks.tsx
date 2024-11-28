@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { useAppContext } from "./context";
+import { useAppState } from "../hooks/use-context";
+import { ButtonClose } from "./button";
 
 const BottomBlock = styled.div<{ collapsed?: boolean }>`
   display: grid;
@@ -10,7 +11,7 @@ const BottomBlock = styled.div<{ collapsed?: boolean }>`
   text-align: center;
 `;
 const Blocks = () => {
-  const { isCollapsed } = useAppContext();
+  const { isCollapsed } = useAppState();
 
   console.log("blocks render");
 
@@ -20,6 +21,7 @@ const Blocks = () => {
         <div>one</div>
         <div>two</div>
         <div>three</div>
+        <ButtonClose />
       </BottomBlock>
     </>
   );

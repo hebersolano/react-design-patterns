@@ -7,7 +7,7 @@ import Sidebar from "./components/sidebar";
 //   height: 100vh;
 // `;
 
-export default function AppPerformanceContext() {
+export default function AppContextSplit() {
   return (
     <AppPageCtx>
       <Sidebar />
