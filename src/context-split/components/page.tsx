@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
-import AppProvider from "./context";
+import AppReducerProvider from "./context-reducer";
 
 export const Container = styled.div`
   display: flex;
@@ -21,9 +21,9 @@ function AppPageCtx({ children }: { children: ReactNode | ReactNode[] }) {
   console.log("count:", count);
 
   return (
-    <AppProvider>
+    <AppReducerProvider>
       <Container>{children}</Container>;
-    </AppProvider>
+    </AppReducerProvider>
   );
 }
 

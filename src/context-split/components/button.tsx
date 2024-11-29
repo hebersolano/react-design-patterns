@@ -12,7 +12,6 @@ const ToggleButton = styled.button`
 `;
 
 export const Button = () => {
-  const { isCollapsed } = useAppState();
   const { toggle } = useAppActions();
 
   return <ToggleButton onClick={toggle}>⮜</ToggleButton>;

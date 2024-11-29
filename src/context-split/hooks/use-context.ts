@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext, AppCtxActions } from "../components/context";
+import { AppContext, AppCtxActions } from "../components/context-reducer";
 
 export function useAppState() {
   const state = useContext(AppContext);
