@@ -1,11 +1,10 @@
 import "./App.css";
-import AppContextSplit from "./context-split/App";
+import AppDeferred from "./use-deferred-value/App";
 
 function App() {
   return (
     <>
-      {/* <AppPerformanceContext /> */}
-      <AppContextSplit />
+      <AppDeferred />
     </>
   );
 }
