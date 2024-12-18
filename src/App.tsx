@@ -1,11 +1,10 @@
 import "./App.css";
-import AppContextSplit from "./context-split/App";
+import AppTransition from "./use-trancition/App";
 
 function App() {
   return (
     <>
-      {/* <AppPerformanceContext /> */}
-      <AppContextSplit />
+      <AppTransition />
     </>
   );
 }
